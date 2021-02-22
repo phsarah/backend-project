@@ -1,0 +1,22 @@
+{
+  "name": "backend-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "clear && echo \"Running tests...\" && jest",
+    "start": "tsc && node --inspect ./build/src/index.js",
+    "dev": " ts-node-dev ./src/index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sarahphessel/backend-project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sarahphessel/backend-project/issues"
+  },
+  "homepage": "https://github.com/sarahphessel/backend-project#readme"
+}
