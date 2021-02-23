@@ -6,7 +6,8 @@
   "scripts": {
     "test": "clear && echo \"Running tests...\" && jest",
     "start": "tsc && node --inspect ./build/src/index.js",
-    "dev": " ts-node-dev ./src/index.ts"
+    "dev": " ts-node-dev ./src/index.ts",
+    "setup": "ts-node-dev ./mySQLSetup.ts "
   },
   "repository": {
     "type": "git",
