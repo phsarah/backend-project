@@ -1,11 +1,12 @@
 import express from "express";
 import { AddressInfo } from "net";
+import { userRouter } from "./controller/routes/userRouter";
 
 const app = express();
 
 app.use(express.json());
 
-app.use("/teste", /* aqui vai uma função do useRouter */ );
+app.use("/user", userRouter);
 
 
 const server = app.listen(3003, () => {

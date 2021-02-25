@@ -1,4 +1,4 @@
-import BaseDatabase from "./src/controller/baseDatabase";
+import BaseDatabase from "./src/data/baseDatabase";
 
 class mySQLSetup extends BaseDatabase{
     public async createTable(): Promise<void>{
