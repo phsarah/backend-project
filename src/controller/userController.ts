@@ -1,5 +1,5 @@
 import { Request, Response} from 'express'
-import { userInputDTO } from '../business/entities/user';
+import { loginInputDTO, userInputDTO } from '../business/entities/user';
 import { Authenticator } from "../business/services/Authenticator";
 import { HashManager } from "../business/services/HashManager";
 import { IdGenerator } from "../business/services/IdGenerator";
@@ -26,8 +26,37 @@ export class UserController{
 
             const token = await userBusiness.signup(input)
             res
+            .status(201)
+            .send({
+                message: "Account successfully created!",
+                token: token
+            })
+        }
+        catch(e){
+            res
+            .status(e.statusCode || 400)
+            .send({ error: e.message });
+        }
+    }
+    public async login(req: Request, res: Response){
+        try{
+            const input: loginInputDTO ={
+                emailOrNickname: req.body.emailOrNickname,
+                password: req.body.password
+            }
+            const token = await userBusiness.login(input)
+
+            console.log({
+                token: token,
+                input: input
+             })
+
+            res
             .status(200)
-            .send("Conta criada com sucesso! \n" + token)
+            .send({
+                message: "Successfully logged in!",
+                token: token
+            })
         }
         catch(e){
             res
@@ -36,3 +65,4 @@ export class UserController{
         }
     }
 }
+
