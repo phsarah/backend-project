@@ -25,6 +25,7 @@ export class UserController{
             }
 
             const token = await userBusiness.signup(input)
+            
             res
             .status(201)
             .send({
@@ -45,11 +46,6 @@ export class UserController{
                 password: req.body.password
             }
             const token = await userBusiness.login(input)
-
-            console.log({
-                token: token,
-                input: input
-             })
 
             res
             .status(200)
