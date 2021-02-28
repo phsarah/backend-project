@@ -1,4 +1,6 @@
+import { userOutputDTO } from "../business/entities/user";
 import BaseDatabase from "./baseDatabase";
+import { Model } from "./model/models";
 
 
 export class UserDatabase extends BaseDatabase{
@@ -32,6 +34,19 @@ export class UserDatabase extends BaseDatabase{
             `)
             
             return result[0][0]
+        }
+        catch(e){
+            throw new Error(e.message && e.sqlMessage)
+        }
+    }
+    public async getUserById(id: string): Promise<userOutputDTO>{
+        try{
+            const result = await BaseDatabase.connection.raw(`
+                SELECT * FROM ${UserDatabase.TABLE_NAME}
+                WHERE id = "${id}"
+            `)
+            
+            return Model.toUserModel(result[0][0])
         }
         catch(e){
             throw new Error(e.message && e.sqlMessage)
