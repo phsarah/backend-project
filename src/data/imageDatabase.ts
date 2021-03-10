@@ -1,5 +1,6 @@
-import { imageInputDTO } from "../business/entities/image";
+import { Image, imageInputDTO } from "../business/entities/image";
 import BaseDatabase from "./baseDatabase";
+import { Model } from "./model/models";
 
 
 export class ImageDatabase extends BaseDatabase{
@@ -56,4 +57,24 @@ export class ImageDatabase extends BaseDatabase{
             throw new Error(e.message || e.sqlMessage)
         }
     }
+    public async getImagesFeed(): Promise<any>{
+        try{
+            const result = await BaseDatabase.connection.raw(`
+                SELECT * FROM ${ImageDatabase.TABLE_NAME_1}
+            `)
+            const map = result[0].map(function(image: any){
+                Model.toImageModel(image)
+            })
+            console.log(map)
+            return map
+            
+        }
+        catch(e){
+            throw new Error(e.message || e.sqlMessage)
+        }
+    }
 }
+
+const imageDatabase = new ImageDatabase
+
+imageDatabase.getImagesFeed()

@@ -1,5 +1,6 @@
 import { Collection } from "../../business/entities/collection";
 import { User } from "../../business/entities/user";
+import { Image } from "../../business/entities/image";
 
 export class Model{
    public static toUserModel(user: any): User {
@@ -17,6 +18,17 @@ export class Model{
          id,
          collection_name,
          user_id
+      );
+   };
+   public static toImageModel(image: any): Image
+   {
+      return new Image(
+         image.id,
+         image.subtitle,
+         image.author,
+         image.date,
+         image.file,
+         image.collection
       );
    };
 }

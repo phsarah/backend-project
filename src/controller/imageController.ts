@@ -37,4 +37,16 @@ export class ImageController{
             .send({ error: e.message });
         }
     }
+    public async getImagesFull(req: Request, res: Response){
+        try{
+            const result = await imageBusiness.getImagesFeed()
+            res
+            .send(result).status(200)
+        }
+        catch(e){
+            res
+            .status(e.statusCode || 400)
+            .send({ error: e.message });
+        }
+    }
 }

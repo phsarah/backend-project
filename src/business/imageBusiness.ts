@@ -40,4 +40,9 @@ export class ImageBusiness{
       await this.imageDatabase.insertIntoIntercession(input.tagsId, id)
     }
   }
+  public async getImagesFeed(){
+    
+    await this.imageDatabase.getImagesFeed()
+    
+  }
 }
