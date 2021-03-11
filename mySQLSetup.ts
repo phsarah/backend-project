@@ -4,14 +4,14 @@ class mySQLSetup extends BaseDatabase{
     public async createTable(): Promise<void>{
         try{
             await BaseDatabase.connection.raw(`
-            CREATE TABLE IF NOT EXISTS PIXALABON_USERS(
+                CREATE TABLE IF NOT EXISTS PIXALABON_USERS(
 
-                id VARCHAR(255) PRIMARY KEY,
-                name VARCHAR(150),
-                email VARCHAR(150) NOT NULL UNIQUE,
-                nickname VARCHAR(150) UNIQUE NOT NULL,
-                password VARCHAR(150) NOT NULL,
-                role enum('NORMAL','ADMIN') DEFAULT "NORMAL"
+                    id VARCHAR(255) PRIMARY KEY,
+                    name VARCHAR(150),
+                    email VARCHAR(150) NOT NULL UNIQUE,
+                    nickname VARCHAR(150) UNIQUE NOT NULL,
+                    password VARCHAR(150) NOT NULL,
+                    role enum('NORMAL','ADMIN') DEFAULT "NORMAL"
             )`)
             await BaseDatabase.connection.raw(`
                 CREATE TABLE IF NOT EXISTS PIXALABON_IMAGES(
@@ -21,8 +21,9 @@ class mySQLSetup extends BaseDatabase{
                     author VARCHAR(255) NOT NULL,
                     date DATE,
                     file VARCHAR(255),
-                    tags VARCHAR(255),
-                    collection VARCHAR(255)
+                    collection VARCHAR(255),
+                    FOREIGN KEY (author) REFERENCES PIXALABON_USERS (id),
+                    FOREIGN KEY (collection) REFERENCES PIXALABON_COLLECTION (id)
                 )
             `)
             await BaseDatabase.connection.raw(`
@@ -37,7 +38,6 @@ class mySQLSetup extends BaseDatabase{
             await BaseDatabase.connection.raw(`
                 CREATE TABLE IF NOT EXISTS PIXALABON_TAG_IMAGE(
 
-                    id VARCHAR(255) PRIMARY KEY,
                     image_id VARCHAR(255) NOT NULL,
                     tag_id VARCHAR(255) NOT NULL,
                     FOREIGN KEY (image_id) REFERENCES PIXALABON_IMAGES (id),
@@ -56,7 +56,6 @@ class mySQLSetup extends BaseDatabase{
             await BaseDatabase.connection.raw(`
                 CREATE TABLE IF NOT EXISTS PIXALABON_COLLECTION_IMAGE(
 
-                    id VARCHAR(255) PRIMARY KEY,
                     collection_id VARCHAR(255) NOT NULL,
                     image_id VARCHAR(255) NOT NULL,
                     FOREIGN KEY (collection_id) REFERENCES PIXALABON_COLLECTION (id),
