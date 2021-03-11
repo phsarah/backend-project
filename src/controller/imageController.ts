@@ -41,7 +41,8 @@ export class ImageController{
         try{
             const result = await imageBusiness.getImagesFeed()
             res
-            .send(result).status(200)
+            .send(result)
+            .status(200)
         }
         catch(e){
             res

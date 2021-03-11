@@ -6,7 +6,6 @@ import { Authenticator } from "./services/Authenticator";
 import { IdGenerator } from "./services/IdGenerator";
 
 export class ImageBusiness{
-    businessImage: any;
     constructor(
         private idGenerator: IdGenerator,
         private authenticator: Authenticator,
@@ -42,7 +41,7 @@ export class ImageBusiness{
   }
   public async getImagesFeed(){
     
-    await this.imageDatabase.getImagesFeed()
+    return await this.imageDatabase.getImagesFeed()
     
   }
 }

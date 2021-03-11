@@ -63,9 +63,8 @@ export class ImageDatabase extends BaseDatabase{
                 SELECT * FROM ${ImageDatabase.TABLE_NAME_1}
             `)
             const map = result[0].map(function(image: any){
-                Model.toImageModel(image)
+                return Model.toImageModel(image)
             })
-            console.log(map)
             return map
             
         }

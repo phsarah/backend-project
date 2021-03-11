@@ -67,4 +67,11 @@ export class UserBusiness{
             throw new CustomError(401, "Incorrect password, try again")
         }
     }
+    public async getUser(token: string){
+        const tokenData = this.authenticator.getData(token)
+
+        const result = await this.userDatabase.getUserById(tokenData.id)
+
+        return result
+    }
 }

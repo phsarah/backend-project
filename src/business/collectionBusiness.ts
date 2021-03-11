@@ -17,4 +17,10 @@ export class CollectionBusiness{
 
         return collection
     }
+    public async businessCreateCollection(token: string, name: string){
+        const id = this.idGenerator.generate()
+        const tokenData = this.authenticator.getData(token)
+
+        await this.collectionDatabase.insertCollection(id, tokenData.id, name)
+    }
 }

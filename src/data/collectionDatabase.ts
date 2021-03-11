@@ -1,4 +1,3 @@
-import { Collection } from "../business/entities/collection";
 import BaseDatabase from "./baseDatabase";
 import { Model } from "./model/models";
 
@@ -13,6 +12,20 @@ export class CollectionDatabase extends BaseDatabase{
             `)
             return result[0]
            
+        }
+        catch(e){
+            throw new Error(e.message || e.sqlMessage)
+        }
+    }
+    public async insertCollection(id: string, userId: string, name: string): Promise<any>{
+        try{
+            await BaseDatabase.connection.raw(`
+            INSERT INTO ${CollectionDatabase.TABLE_NAME_1}(id, collection_name, user_id)
+            VALUES(
+                "${id}",
+                "${name}",
+                "${userId}"
+            )`)
         }
         catch(e){
             throw new Error(e.message || e.sqlMessage)

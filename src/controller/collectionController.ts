@@ -28,4 +28,23 @@ export class CollectionController{
             .send({ error: e.message });
         }
     }
+    public async createCollection(req: Request, res: Response){
+        try{
+            const token = req.headers.authorization as string
+
+            const name =  req.body.name
+             
+            await collectionBusiness.businessCreateCollection(token, name)
+
+            res
+            .status(200)
+            .send("Collection created!")
+        }
+        catch(e){
+            res
+            .status(e.statusCode || 400)
+            .send({ error: e.message });
+        }
+    }
 }
+

@@ -60,5 +60,22 @@ export class UserController{
             .send({ error: e.message });
         }
     }
+    public async getUser(req: Request, res: Response){
+        try{
+            const token = req.headers.authorization as string
+            const result = await userBusiness.getUser(token)
+
+            res
+            .status(200)
+            .send({
+                result
+            })
+        }
+        catch(e){
+            res
+            .status(e.statusCode || 400)
+            .send({ error: e.message });
+        }
+    }
 }
 
