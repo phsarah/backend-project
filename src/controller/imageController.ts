@@ -50,4 +50,20 @@ export class ImageController{
             .send({ error: e.message });
         }
     }
+    public async getImagesByUserId(req: Request, res: Response){
+        try{    
+            const token = req.headers.authorization as string
+
+            const images = await imageBusiness.getImagesByUserId(token) 
+
+            res
+            .send(images)
+            .status(200)
+        }
+        catch(e){
+            res
+            .status(e.statusCode || 400)
+            .send({ error: e.message });
+        }
+    }
 }

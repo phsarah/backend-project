@@ -7,3 +7,4 @@ const imageController = new ImageController()
 
 imageRouter.post('/create', imageController.createImage)
 imageRouter.get('/feed', imageController.getImagesFull)
+imageRouter.get('/all', imageController.getImagesByUserId)

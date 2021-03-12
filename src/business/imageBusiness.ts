@@ -44,4 +44,12 @@ export class ImageBusiness{
     return await this.imageDatabase.getImagesFeed()
     
   }
+  public async getImagesByUserId(token: string){
+
+    const tokenData = this.authenticator.getData(token)
+
+    const images = await this.imageDatabase.getImagesById(tokenData.id)
+    
+    return images
+  }
 }
