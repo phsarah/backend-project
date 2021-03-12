@@ -72,8 +72,19 @@ export class ImageDatabase extends BaseDatabase{
             throw new Error(e.message || e.sqlMessage)
         }
     }
+    public async getImagesById(userId: string): Promise<any>{
+        try{
+            const result = await BaseDatabase.connection.raw(`
+                SELECT * FROM ${ImageDatabase.TABLE_NAME_1}
+                WHERE author = "${userId}"
+            `)
+            console.log(result[0])
+            return result[0]
+        }
+        catch(e){
+            throw new Error(e.message || e.sqlMessage)
+        }
+    }
 }
 
-const imageDatabase = new ImageDatabase
 
-imageDatabase.getImagesFeed()
