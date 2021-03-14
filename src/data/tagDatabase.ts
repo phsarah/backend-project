@@ -14,4 +14,18 @@ export class TagDatabase extends BaseDatabase{
             throw new Error(e.message || e.sqlMessage)
         }
     }
+    public async selectTagByIdUser(userId: string){
+        try{
+            const result = await BaseDatabase.connection.raw(`
+                SELECT * FROM ${TagDatabase.TABLE_NAME}
+                WHERE user_id = "${userId}"
+            `
+            )
+            console.log(result[0][0])
+            return result[0][0]
+        }
+        catch(e){
+            throw new Error(e.message || e.sqlMessage)
+        }
+    }
 }

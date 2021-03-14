@@ -4,6 +4,7 @@ import { imageRouter } from "./controller/routes/imageRouter";
 import { userRouter } from "./controller/routes/userRouter";
 import { collectionRouter } from "./controller/routes/collectionRouter";
 import cors from 'cors'
+import { tagRouter } from "./controller/routes/tagRouter";
 
 const app = express();
 
@@ -14,6 +15,7 @@ app.use(cors())
 app.use("/user", userRouter);
 app.use("/image", imageRouter);
 app.use("/collection", collectionRouter);
+app.use("/tag", tagRouter);
 
 
 const server = app.listen(3003, () => {

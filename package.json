@@ -5,10 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "clear && echo \"Running tests...\" && jest",
-    "start": "tsc && node --inspect ./build/src/index.js",
+    "start": "node ./build/src/index.js",
+    "build": "tsc",
     "dev": " ts-node-dev ./src/index.ts",
-    "setup": "ts-node-dev ./mySQLSetup.ts",
-    "array": "tsc && node ./build/src/data/imageDatabase.js"
+    "setup": "ts-node-dev ./mySQLSetup.ts"
   },
   "repository": {
     "type": "git",

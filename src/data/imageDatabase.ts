@@ -78,7 +78,6 @@ export class ImageDatabase extends BaseDatabase{
                 SELECT * FROM ${ImageDatabase.TABLE_NAME_1}
                 WHERE author = "${userId}"
             `)
-            console.log(result[0])
             return result[0]
         }
         catch(e){
