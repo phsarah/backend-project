@@ -60,9 +60,8 @@ export class ImageDatabase extends BaseDatabase{
     public async getImagesFeed(): Promise<any>{
         try{
             const result = await BaseDatabase.connection.raw(`
-                SELECT * FROM ${ImageDatabase.TABLE_NAME_1}
-                INNER JOIN PIXALABON_USERS
-                ON PIXALABON_IMAGES.author = PIXALABON_USERS.id;
+                SELECT * FROM ${ImageDatabase.TABLE_NAME_3}
+               
             `)
             console.log(result[0])
 
