@@ -14,6 +14,23 @@ const tagBusiness = new TagBusiness(
 )
 
 export class TagController{
+    public async createTag(req: Request, res: Response){
+        try{
+            const {tagName} = req.body
+            const token = req.headers.authorization as string
+            await tagBusiness.createTag(token, tagName)
+
+            res
+            .status(201)
+            .send("tag created!")
+        }
+        catch(e){
+            res
+            .status(e.statusCode || 400)
+            .send({ error: e.message && e.sqlMessage });
+        }
+    }
+
     public async getTagsByIdUser(req: Request, res: Response){
         try{
             const token = req.headers.authorization as string
@@ -21,7 +38,7 @@ export class TagController{
             
             res
             .status(200)
-            .send(tags)
+            .send({tags})
 
         }
         catch(e){

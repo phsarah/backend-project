@@ -66,4 +66,23 @@ export class ImageController{
             .send({ error: e.message });
         }
     }
+    public async getImagesByCollection(req: Request, res: Response){
+        try{    
+            const {id} = req.params
+            // const images = await imageBusiness.getImagesByCollection(id) 
+            
+            res
+            .send()
+            .status(200)
+        }
+        catch(e){
+            res
+            .status(e.statusCode || 400)
+            .send({ error: e.message });
+        }
+    }
 }
+
+const iamgeController = new ImageController()
+
+iamgeController.getImagesByCollection

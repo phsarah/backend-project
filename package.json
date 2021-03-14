@@ -8,7 +8,8 @@
     "start": "node ./build/src/index.js",
     "build": "tsc",
     "dev": " ts-node-dev ./src/index.ts",
-    "setup": "ts-node-dev ./mySQLSetup.ts"
+    "setup": "ts-node-dev ./mySQLSetup.ts",
+    "data": "ts-node-dev ./src/data/imageDatabase.ts"
   },
   "repository": {
     "type": "git",

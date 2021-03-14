@@ -12,11 +12,16 @@ export class TagBusiness{
         private tagDatabase: TagDatabase
     ) { }
 
-    public async createTag(){
-        
+    public async createTag(token: string, tagName: string){
+        const id = this.idGenerator.generate()
+        const tokenData = this.authenticator.getData(token)
+
+        await this.tagDatabase.insertTag(id, tokenData.id, tagName)
     }
+
     public async selectTagById(token: string){
         const tokenData = this.authenticator.getData(token)
+
         return await this.tagDatabase.selectTagByIdUser(tokenData.id)
     }
 }
