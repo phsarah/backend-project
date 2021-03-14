@@ -40,9 +40,10 @@ export class ImageController{
     public async getImagesFull(req: Request, res: Response){
         try{
             const result = await imageBusiness.getImagesFeed()
+            
             res
             .send(result)
-            .status(200)
+            .status(201)
         }
         catch(e){
             res

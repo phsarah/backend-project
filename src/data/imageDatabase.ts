@@ -66,7 +66,6 @@ export class ImageDatabase extends BaseDatabase{
             `)
             console.log(result[0])
 
-            return result[0]
             
         }
         catch(e){
