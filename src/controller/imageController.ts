@@ -70,10 +70,10 @@ export class ImageController{
     public async getImagesByCollection(req: Request, res: Response){
         try{    
             const {id} = req.params
-            // const images = await imageBusiness.getImagesByCollection(id) 
+            const images = await imageBusiness.getImagesByCollection(id) 
             
             res
-            .send()
+            .send(images)
             .status(200)
         }
         catch(e){
