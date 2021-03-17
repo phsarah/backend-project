@@ -61,11 +61,11 @@ export class ImageDatabase extends BaseDatabase{
         try{
             const result = await BaseDatabase.connection.raw(`
                 SELECT * FROM ${ImageDatabase.TABLE_NAME_1}
+                INNER JOIN PIXALABON_USERS
+                ON PIXALABON_IMAGES.author = PIXALABON_USERS.id;
+               
             `)
-            const map = result[0].map(function(image: any){
-                return Model.toImageModel(image)
-            })
-            return map
+            return result[0]
             
         }
         catch(e){
@@ -84,6 +84,20 @@ export class ImageDatabase extends BaseDatabase{
             throw new Error(e.message || e.sqlMessage)
         }
     }
+    public async getImagesByCollection(id: string): Promise<any>{
+        try{
+            const result = await BaseDatabase.connection.raw(`
+            SELECT * FROM ${ImageDatabase.TABLE_NAME_1}
+            WHERE collection = "${id}"
+            
+        `)
+        return result[0]
+        }
+        catch(e){
+            throw new Error(e.message || e.sqlMessage)
+        }
+    }
 }
+
 
 

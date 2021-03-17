@@ -20,15 +20,20 @@ export class Model{
          user_id
       );
    };
-   public static toImageModel(image: any): Image
+   public static toImageModel(image: any)
    {
-      return new Image(
+      return(
          image.id,
          image.subtitle,
          image.author,
          image.date,
          image.file,
-         image.collection
+         image.collection,
+         image.name, 
+         image.email,
+         image.nickname,
+         image.password,
+         image.role
       );
    };
 }

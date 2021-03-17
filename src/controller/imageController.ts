@@ -40,9 +40,10 @@ export class ImageController{
     public async getImagesFull(req: Request, res: Response){
         try{
             const result = await imageBusiness.getImagesFeed()
+            
             res
             .send(result)
-            .status(200)
+            .status(201)
         }
         catch(e){
             res
@@ -66,4 +67,23 @@ export class ImageController{
             .send({ error: e.message });
         }
     }
+    public async getImagesByCollection(req: Request, res: Response){
+        try{    
+            const {id} = req.params
+            const images = await imageBusiness.getImagesByCollection(id) 
+            
+            res
+            .send(images)
+            .status(200)
+        }
+        catch(e){
+            res
+            .status(e.statusCode || 400)
+            .send({ error: e.message });
+        }
+    }
 }
+
+const iamgeController = new ImageController()
+
+iamgeController.getImagesByCollection

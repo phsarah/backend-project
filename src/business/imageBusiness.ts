@@ -52,4 +52,14 @@ export class ImageBusiness{
     
     return images
   }
+  public async getImagesByCollection(id: string){
+
+    if(!id){
+      throw new CustomError(417, "Invalid id")
+    }
+    
+    return await this.imageDatabase.getImagesByCollection(id)
+  }
 }
+
+
