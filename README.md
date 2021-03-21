@@ -48,10 +48,9 @@ O servidor inciará na porta:3003 - acesse <http://localhost:3003>
 4. Envie as suas alterações: git push origin my-feature
  
  
-## Authors
+## Autora
  
 * **Sarah Pereira Hessel**: @phsarah (https://github.com/phsarah)
  
  
-Please follow github and join us!
-Thanks to visiting me and good coding!
+Agradeço pela visita e boa codificação! :squirrel:
