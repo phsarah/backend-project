@@ -3,7 +3,7 @@
 
  
  
-## Technology 
+## :hammer: Tecnologias 
  
 Here are the technologies used in this project.
  
@@ -20,16 +20,14 @@ Here are the technologies used in this project.
  
 ## :rocket: Como executar o projeto
 
+- Clone este repositório
+`$ git clone <https://github.com/phsarah/backend-project.git`
 
-` # Clone este repositório
-$ git clone <https://github.com/phsarah/backend-project.git>`
+- Instale as dependências
+`$ npm install`
 
- # Instale as dependências
-$ npm install
-
- # Execute a aplicação 
-$ npm run start
-
+- Execute a aplicação 
+`$ npm run start`
 
 
 ### O servidor inciará na porta:3003 - acesse <http://localhost:3003>
