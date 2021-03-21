@@ -54,4 +54,4 @@ O servidor inciará na porta:3003 - acesse <http://localhost:3003>
 * **Sarah Pereira Hessel**: @phsarah (https://github.com/phsarah)
  
  
-Agradeço pela visita e boa codificação!  :squirrel:
+Agradeço pela visita e boa codificação! :shipit:
