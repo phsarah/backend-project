@@ -3,7 +3,7 @@
 
  
  
-## :hammer: Tecnologias 
+## 🛠 Tecnologias 
  
 As seguintes ferramentas foram usadas na construção do projeto:
  
@@ -20,7 +20,7 @@ As seguintes ferramentas foram usadas na construção do projeto:
  
 ## :rocket: Como executar o projeto
 
-## 🎲 Rodando o Back End (servidor)
+### 🎲 Rodando o Back End (servidor)
 
  Clone este repositório <br/>
  
@@ -37,28 +37,11 @@ As seguintes ferramentas foram usadas na construção do projeto:
 
 O servidor inciará na porta:3003 - acesse <http://localhost:3003>
  
-## How to use
- 
-Here will be the images and descriptions. Principal content.
- 
- 
-## Features
- 
-  - Here will be the features.
- 
- 
-## Links
- 
-  - Link of deployed application: (if has been deployed)
-  - Repository: https://link_of_repository
-    - In case of sensitive bugs like security vulnerabilities, please contact
-      YOUR EMAIL directly instead of using issue tracker. We value your effort
-      to improve the security and privacy of this project!
- 
- 
-## Versioning
- 
-1.0.0.0
+## 😯 Como contribuir para o projeto
+1. Faça um fork do projeto.
+2. Crie uma nova branch com as suas alterações: git checkout -b my-feature
+3. Salve as alterações e crie uma mensagem de commit contando o que você fez: git commit -m "feature: My new feature"
+4. Envie as suas alterações: git push origin my-feature
  
  
 ## Authors
