@@ -7,7 +7,7 @@
  
 Here are the technologies used in this project.
  
-* Ruby version  x.x.x
+* 
 * Rails version x.x.x
 * ...
  
@@ -17,9 +17,6 @@ Here are the technologies used in this project.
 * Github
 * ...
  
- 
-## Ruby Gems
-...
  
 ## Getting started
  
@@ -36,7 +33,7 @@ $ cd server
 $ npm install
 
 # Execute a aplicação em modo de desenvolvimento
-$ npm run dev:server
+`$ npm run dev:server`
 
 # O servidor inciará na porta:3333 - acesse <http://localhost:3333>
  
