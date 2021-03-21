@@ -5,20 +5,22 @@
  
 ## :hammer: Tecnologias 
  
-Here are the technologies used in this project.
+As seguintes ferramentas foram usadas na construção do projeto:
  
+* Node.js 
+* Typescript
 * 
-* Rails version x.x.x
-* ...
  
  
-## Services Used
+## Serviços usados
  
+* Postman
 * Github
-* ...
  
  
 ## :rocket: Como executar o projeto
+
+## 🎲 Rodando o Back End (servidor)
 
  Clone este repositório <br/>
  
@@ -33,7 +35,7 @@ Here are the technologies used in this project.
 `$ npm run start`
 
 
-### O servidor inciará na porta:3003 - acesse <http://localhost:3003>
+O servidor inciará na porta:3003 - acesse <http://localhost:3003>
  
 ## How to use
  
