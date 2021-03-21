@@ -18,24 +18,21 @@ Here are the technologies used in this project.
 * ...
  
  
-## Getting started
- 
-# Clone este repositório
-$ git clone <https://github.com/tgmarinho/nlw1>
+## :rocket: Como executar o projeto
 
-# Acesse a pasta do projeto no terminal/cmd
-$ cd nlw1
+`
+ # Clone este repositório
+$ git clone <https://github.com/phsarah/backend-project.git>
 
-# Vá para a pasta server
-$ cd server
-
-# Instale as dependências
+ # Instale as dependências
 $ npm install
 
-# Execute a aplicação em modo de desenvolvimento
-`$ npm run dev:server`
+ # Execute a aplicação 
+$ npm run start
+`
 
-# O servidor inciará na porta:3333 - acesse <http://localhost:3333>
+
+### O servidor inciará na porta:3003 - acesse <http://localhost:3003>
  
 ## How to use
  
