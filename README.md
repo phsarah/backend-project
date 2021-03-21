@@ -21,12 +21,15 @@ Here are the technologies used in this project.
 ## :rocket: Como executar o projeto
 
  Clone este repositório <br/>
+ 
 `$ git clone <https://github.com/phsarah/backend-project.git`
 
- Instale as dependências
+ Instale as dependências <br/>
+ 
 `$ npm install`
 
- Execute a aplicação 
+ Execute a aplicação <br/>
+ 
 `$ npm run start`
 
 
