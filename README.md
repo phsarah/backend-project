@@ -22,7 +22,7 @@ As seguintes ferramentas foram usadas na construção do projeto:
  
 ## :rocket: Como executar o projeto
 
-#### 🎲 Rodando o Back End (servidor)
+### 🎲 Rodando o Back End (servidor)
 
 
  Clone este repositório <br/>
