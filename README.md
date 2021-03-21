@@ -1,4 +1,4 @@
-## Pixalabel
+# Pixalabel
  
 
  
@@ -9,18 +9,21 @@ As seguintes ferramentas foram usadas na construção do projeto:
  
 * Node.js 
 * Typescript
-* 
+* Express
+* Axios
+* Cors
  
  
 ## Serviços usados
  
-* Postman
+* Teste de API: Postman
 * Github
  
  
 ## :rocket: Como executar o projeto
 
 ### 🎲 Rodando o Back End (servidor)
+
 
  Clone este repositório <br/>
  
@@ -38,6 +41,7 @@ As seguintes ferramentas foram usadas na construção do projeto:
 O servidor inciará na porta:3003 - acesse <http://localhost:3003>
  
 ## 😯 Como contribuir para o projeto
+
 1. Faça um fork do projeto.
 2. Crie uma nova branch com as suas alterações: git checkout -b my-feature
 3. Salve as alterações e crie uma mensagem de commit contando o que você fez: git commit -m "feature: My new feature"
@@ -46,7 +50,7 @@ O servidor inciará na porta:3003 - acesse <http://localhost:3003>
  
 ## Authors
  
-* **YOUR NAME**: @YOUR_GITHUB_NICKNAME (https://github.com/YOUR_GITHUB_NICKNAME)
+* **Sarah Pereira Hessel**: @phsarah (https://github.com/phsarah)
  
  
 Please follow github and join us!
