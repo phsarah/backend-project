@@ -41,7 +41,7 @@ As seguintes ferramentas foram usadas na construção do projeto:
 
 O servidor inciará na porta:3003 - acesse <http://localhost:3003>
  
-## 😯 Como contribuir para o projeto
+## :smile: Como contribuir para o projeto
 
 1.  Faça um fork do projeto.
 2.  Crie uma nova branch com as suas alterações: `git checkout -b my-feature`
